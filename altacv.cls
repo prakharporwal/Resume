@@ -86,6 +86,7 @@
 \if@withhyper
   \AtBeginDocument{%
     \hypersetup{hidelinks}
+    
     \urlstyle{same}
   }
 \fi
@@ -202,8 +203,9 @@
 \NewInfoField{phone}{\faPhone}[tel:]
 \NewInfoField{homepage}{\faGlobe}[https://]
 \NewInfoField{twitter}{\faTwitter}[https://twitter.com/]
-\NewInfoField{linkedin}{\faLinkedinIn}[https://linkedin.com/in/]
-\NewInfoField{github}{\faGithub}[https://github.com/]
+\NewInfoField{linkedin}{\faLinkedinIn LinkedIn: }[https://linkedin.com/in/]
+\NewInfoField{github}{\faGithub Github:}[https://github.com/]
+\NewInfoField{interviewbit}{InterviewBit:}[https://www.interviewbit.com/profile/]
 % v1.?? Use fontawesome5 for Orcid symbol
 \NewInfoField{orcid}{\faOrcid}[https://orcid.org/]
 \NewInfoField{location}{\faMapMarker*}
@@ -305,20 +307,20 @@
 }
 
 \newcommand{\cvschool}[5]{
- \begin{tabularx}{\linewidth}{@{}p{22em} @{\hspace{2ex}} >{\raggedright\arraybackslash}X@{}}
+ \begin{tabularx}{\linewidth}{@{}p{19em} @{\hspace{2ex}} >{\raggedright\arraybackslash}X@{}}
   \multirow{2}{*}{}{{\Large\color{emphasis}#1\par}
   \smallskip\normalsize
        \ifstrequal{#2}{}{}{
   \textsc{\color{accent}#2}\par
   \smallskip}
-  \ifstrequal{#3}{}{}{{\small\makebox[0.7\linewidth][l]{\faCalendar* ~#3}}}
-  \ifstrequal{#4}{}{}{{\small\makebox[0.2\linewidth][l]{\faMapMarker* ~#4}}}
+  \ifstrequal{#3}{}{}{{\small\makebox[0.6\linewidth][l]{\faCalendar* ~#3}}}
+  \ifstrequal{#4}{}{}{{\small\makebox[0.1\linewidth][l]{\faMapMarker* ~#4}}}
   } & {\Large\color{accent}#5}
   \end{tabularx}%
 }
 
 \newcommand{\cvinterests}[2]{%
-  {\large\color{accent}#1\par}
+  {\large #1\par}
   \smallskip\normalsize
   \ifstrequal{#2}{}{}{
   \textsc{#2}\par

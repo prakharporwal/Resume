@@ -17,6 +17,8 @@
 % \documentclass[10pt,a4paper,normalphoto]{altacv}
 
 \documentclass[10pt,a4paper,ragged2e,withhyper]{altacv}
+\usepackage{fontawesome5}
+
 
 %% AltaCV uses the fontawesome5 package.
 %% See http://texdoc.net/pkg/fontawesome5 for full list of symbols.
@@ -38,14 +40,16 @@
 % \fi
 
 % Change the colours if you want to 008CFF
-\definecolor{VividBlue}{HTML}{FF9900} %Blue in the doc
-\definecolor{SlateGrey}{HTML}{2E2E2E}  %Black
-% \definecolor{LightGrey}{HTML}{2E2E2E}
-\definecolor{LightGrey}{HTML}{666666} % gray (NOT USED)
+\definecolor{VividBlue}{HTML}{008CFF} %Blue in the doc
+\definecolor{SlateGrey}{HTML}{000000}  %Black
+\definecolor{LightGrey}{HTML}{3D3D3D}
+% \definecolor{LightGrey}{HTML}{666666} % gray (NOT USED)
+\definecolor{URLBlue}{HTML}{008333}
 % \colorlet{name}{black}
 \colorlet{tagline}{VividBlue}
 \colorlet{heading}{SlateGrey}
 \colorlet{headingrule}{SlateGrey}
+
 
 \colorlet{accent}{VividBlue}
 \colorlet{emphasis}{SlateGrey}
@@ -74,8 +78,10 @@
 
 %% sample.bib contains your publications
 \addbibresource{sample.bib}
-
 \begin{document}
+
+\urlstyle{same}
+
 \name{Prakhar Porwal}
 \tagline{Software Developer}
 % Cropped to square from https://en.wikipedia.org/wiki/Marissa_Mayer#/media/File:Marissa_Mayer_May_2014_(cropped).jpg, CC-BY 2.0
@@ -89,8 +95,9 @@
   \phone{+919565600834}
 %   \mailaddress{Address, Street, 00000 County}
 %   \location{Rajasthan, India }
-%   \homepage{marissamayr.tumblr.com}
-%   \twitter{@marissamayer}
+%   \homepage{www.prakharporwal.tech}
+%   \twitter{@prakharporwall}
+\interviewbit{prakharporwal}
 %   \linkedin{porwalprakhar}
     \github{prakharporwal}
     % I'm just making this up though.
@@ -112,58 +119,96 @@
   % \NewInfoField*{mastodon}{\faMastodon}
   %% then you can use \mastodon, with TWO arguments where the 2nd argument is
   %% the full hyperlink.
-  % \mastodon{@username@instance}{https://instance.url/@username}
+%   \mastodon{@username@instance}{https://instance.url/@username}
 }
-
 \makecvheader
 
 %% Depending on your tastes, you may want to make fonts of itemize environments slightly smaller
 \AtBeginEnvironment{itemize}{\small}
 
 %% Set the left/right column width ratio to 6:4.
-\columnratio{0.6}
+\columnratio{0.5}
 
 % Start a 2-column paracol. Both the left and right columns will automatically
 % break across pages if things get too long.
 \begin{paracol}{2}
 
 \cvsection{Experience}
+\cvevent{Open Source Contribution }{ Focalboard @ Mattermost }{}{}
+\begin{itemize}
+\item Prevented accidentally deletion of data  by \\ creating component  \textbf{Confirmation Dialog Box}\\ 
+\begin{itemize}
+    \item[->] \underline{\url{https://github.com/mattermost/focalboard/pull/1546}}
+    \item[->] \underline{\url{https://github.com/mattermost/focalboard/pull/1655}}
+\end{itemize}
+
+\item Created \textbf{unit tests} for the react component using Jest \\ \underline{\url{https://github.com/mattermost/focalboard/pull/1648}}
+
+\item Solved Bug relating to data propagation to \\ Child Component \\
+\underline{\url{https://github.com/mattermost/focalboard/pull/547}}
+\item \color{emphasis}\textbf{Tools Used : TypeScript, React, Jest }
+\end{itemize}
+
+\divider
+
 \cvevent{Software Developer}{SAP SuccessFactors}{July 2021 -- Ongoing}{Bangalore, India}
+\begin{itemize}
+\item Solving bugs on the Learning Management System
+% \item \color{emphasis}\textbf{Built Using : Java, Spring, HanaDB, Ibatis, SAPUI5}
+\end{itemize}
+
+\divider
 
 \cvevent{Software Development Intern}{SAP Labs India}{Feb 2021 -- July 2021}{Gurgaon, India}
+\begin{itemize}
+\item Added \textbf{SSO} for Retrofeed which     \textbf{doubled} user registrations   
+\item Created \textbf{Cron Job} to clean up garbage data from DB
+\item Migrated UI to React based components which improved performance by not re-rendering of whole webpage .
+\color{emphasis}\color{emphasis}\item \textbf{Tools Used: Java, SpringBoot, Spring Security, ReactJS, SAP IDP, SSO}
+\end{itemize}
 
 % \divider
 
 \cvsection{Projects}
 
-\cvevent{Focalboard}{ Open Source Project @ Mattermost }{}{}
+% \divider
+% \cvevent{Change Data Capture on DynamoDB}{Performed Analytics on Redshift}{}{}
+% \begin{itemize}
+%     \item performed analytics on data warehouse using AWS Redshift.
+%     \item Change Data Capture on DyanmoDB and dumped into S3. 
+%     \item Analytics on S3 json Files using Redshift.
+%     \item Used React JS to display the data using API.
+%     \item \color{emphasis}\textbf{TECH USED : S3, Redshift, DynamoDB, CDC, API Gateway, ReactJS }
+% \end{itemize}
+
+% \divider
+% \cvevent{Change Data Capture on DynamoDB}{Performed Analytics on Redshift}{}{}
+% \begin{itemize}
+%     \item performed analytics on data warehouse using AWS Redshift.
+%     \item Change Data Capture on DyanmoDB and dumped into S3. 
+%     \item Analytics on S3 json Files using Redshift.
+%     \item Used React JS to display the data using API.
+%     \item \color{emphasis}\textbf{TECH USED : S3, Redshift, DynamoDB, CDC, API Gateway, ReactJS }
+% \end{itemize}
+
+% \divider
+
+% \cvevent{Retrofeed}{Tool to improve retrospectives meetings}{}{}
+% \begin{itemize}
+% \item Improved retrospectives meetings for about 15 Teams (250+ users).
+% \item built product features keeping user experience at core.
+% \item \color{emphasis}\textbf{Tools Used : Spring Boot,  React JS, PostgreSQL}
+% \end{itemize}
+
+% \divider
+
+\cvevent{Musify}{A Music Listening webapp}{}{}
 \begin{itemize}
-\item Prevented user from accidentally manipulating/deleting their data by raising Warning dialog for each modification. 
-\item  \underline{\href{https://github.com/mattermost/focalboard/pull/547}{Solved Bug relating to data propagation to Child Component} }
-\item \color{emphasis}\textbf{TECH USED : TypeScript, ReactJS , Golang}
+\item Online Music listening Platform with features like Song Search by Name, Artist ,Album, Genre.
+\item  UI for Admin to add ,edit, delete songs and users Info.
+\item Users Sign up, log in and history.
+\item \color{emphasis}\textbf{Tools Used : HTML, CSS , JS , Flask, MySQL}
 \end{itemize}
-
-\divider
-
-\cvevent{Change Data Capture on DynamoDB}{Performed Analytics on Redshift}{}{}
-\begin{itemize}
-    \item performed analytics on data warehouse using AWS Redshift.
-    \item Change Data Capture on DyanmoDB and dumped into S3. 
-    \item Analytics on S3 json Files using Redshift.
-    \item Used React JS to display the data using API.
-    \item \color{emphasis}\textbf{TECH USED : S3, Redshift, DynamoDB, CDC, API Gateway, ReactJS }
-\end{itemize}
-
-\divider
-
-\cvevent{Retrofeed}{Tool to improve retrospectives meetings}{}{}
-\begin{itemize}
-\item Improved retrospectives meetings for about 15 Teams (250+ users).
-\item built product features keeping user experience at core.
-\item Migrated to Component based UI using React JS.
-\item \color{emphasis}\textbf{TECH USED : Spring Boot, Spring Security, React JS, PostgreSQL}
-\end{itemize}
-
 
 % \divider
 % \cvevent{Improved Full Text Search}{}{}{}
@@ -174,17 +219,6 @@
 %     \item Used React JS to display the data using API
 %     \item \textbf{TECH USED :} Elastic Search, DynamoDB, CDC, API Gateway, ReactJS
 % \end{itemize}
-
-
-
-
-\cvsection{Education}
-
-\cvschool{B.Tech\ in Information Technology}{Indian Institute of Information Technology}{Aug 2017 -- Sept 2021 }{Allahabad}{7.63/10}
-
-\divider
-
-\cvschool{Senior Secondary}{Modern School}{Mar 2013 -- Mar 2017}{Kota}{85.8\%}
 
 
 % \cvevent{Product Engineer}{Google}{23 June 1999 -- 2001}{Palo Alto, CA}
@@ -251,44 +285,80 @@
 %% page if the content is too long.
 \switchcolumn
 
-\cvsection{Technologies used}
+
+\cvsection{Education}
+
+\cvschool{B.Tech\ in I.T.}{Indian Institute of Information Technology}{Aug 2017 -- Sept 2021 }{Allahabad}{7.63/10}
+
+\divider
+
+\cvschool{Senior Secondary}{Modern School}{Mar 2013 -- Mar 2017}{Kota}{85.8\%}
+
+\cvsection{Interests}
+\cvinterests{Problem Solving}{}
+\cvinterests{FullStack Development}{}
+\cvinterests{Contributing to Open Source}{}
+
+
+\cvsection{Tools used}
 \begin{center}
 % \cvtag{Low Level Design}
-\cvtag{MVC Architecture}
-\cvtag{\faReact React JS}
-\cvtag{\faAws AWS}
-\cvtag{\faLeaf Spring Boot}
-\cvtag{Spring Security}
-\cvtag{Spring Hibernate}
-\cvtag{Data Structure}
-\cvtag{Algorithms}
+% \cvtag{MVC Architecture}
+\cvtag{\faIcon{code-branch} Git}
+\cvtag{\faReact React}
+\cvtag{TypeScript}
+\cvtag{\faIcon{js} Jest}
+\cvtag{\faLeaf Spring}
+% \cvtag{\faLeaf Spring Boot}
+% \cvtag{Spring Security}
+\cvtag{Hibernate}
+\cvtag{\faIcon{docker} Docker}
+\cvtag{\faIcon{user-astronaut} Postman}
+\cvtag{\faIcon{database} PostgreSQL}
+\cvtag{\faIcon{database} MySQL}
+\cvtag{\faAws AWS Lambda}
 \end{center}
 
 \cvsection{Skills}
-% \cvskill{Low Level Design}{3}
-% \divider
-% \cvskill{OOP}{4}
-\begin{itemize}
-    \item Building Web Application with MVC Architecture.
-    \item Designing low level architecture of web applications.
-    \item Writing Algorithms with use of data structures.
-\end{itemize}
+\cvskill{Go}{2}
 
-
-
-\cvsection{Interests}
-\cvinterests{FullStack Development}{}
 \divider
-\cvinterests{Designing and Rethinking Solutions}{}
+
+\cvskill{JavaScript}{3}
+\cvskill{React}{2}
+\cvskill{Typescript}{2}
+
+\divider
+
+\cvskill{Java}{4}
+\cvskill{Spring}{3}
+
+\divider
+
+\cvskill{Git}{4}
+\cvskill{Data Structures}{4}
+\cvskill{Algorithms}{3}
+
+% \begin{itemize}
+%     \item Building Web Application with MVC Architecture.
+%     \item Designing low level architecture of web applications.
+%     \item Writing Algorithms with use of data structures.
+% \end{itemize}
 
 
 \cvsection{Achievements}
 
-\cvachievement{\faCircle}{Secured AIR 3947 in JEE Mains}{}
-\cvachievement{\faTrophy}{NTSE}{Qualified NTSE (State level) Exam}
+\begin{itemize}
+    \item Secured AIR 3947 in JEE Mains.
+    \item Qualified NTSE (State level) Exam
+    \item Silver Medal in State Level T.T Tournament
+    \item 3 silver medal in Inter-IIIT Sports meet
+\end{itemize}
 
-\cvachievement{\faTableTennis}{State Level T.T player}{Achieved 2nd Position in State Level Tournament}
-\cvachievement{\faSwimmer}{Swimmer}{Achieved 3 silver medal in Inter-IIIT Sports meet}
+% \cvachievement{\faTrophy}{Qualified NTSE (State level) Exam}{}
+
+% \cvachievement{\faTableTennis}{}{}
+% \cvachievement{\faSwimmer}{}{}
 
 % \divider\smallskip
 
@@ -338,7 +408,5 @@
 % \cvref{Prof.\ Gamma Delta}{Institute}{g.delta@university.edu}
 % {Address Line 1\\Address line 2}
 
-
 \end{paracol}
-
 \end{document}
