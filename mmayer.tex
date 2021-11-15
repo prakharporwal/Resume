@@ -1,0 +1,344 @@
+%%%%%%%%%%%%%%%%%
+% This is an example CV created using altacv.cls (v1.6, 21 May 2021) written by
+% LianTze Lim (liantze@gmail.com), based on the
+% Cv created by BusinessInsider at http://www.businessinsider.my/a-sample-resume-for-marissa-mayer-2016-7/?r=US&IR=T
+%
+%% It may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License, either version 1.3
+%% of this license or (at your option) any later version.
+%% The latest version of this license is in
+%%    http://www.latex-project.org/lppl.txt
+%% and version 1.3 or later is part of all distributions of LaTeX
+%% version 2003/12/01 or later.
+%%%%%%%%%%%%%%%%
+
+
+%% Use the "normalphoto" option if you want a normal photo instead of cropped to a circle
+% \documentclass[10pt,a4paper,normalphoto]{altacv}
+
+\documentclass[10pt,a4paper,ragged2e,withhyper]{altacv}
+
+%% AltaCV uses the fontawesome5 package.
+%% See http://texdoc.net/pkg/fontawesome5 for full list of symbols.
+
+% Change the page layout if you need to
+\geometry{left=1.25cm,right=1.25cm,top=1.5cm,bottom=1.5cm,columnsep=1.2cm}
+
+% The paracol package lets you typeset columns of text in parallel
+\usepackage{paracol}
+
+% Change the font if you want to, depending on whether
+% you're using pdflatex or xelatex/lualatex
+\ifxetexorluatex
+%   % If using xelatex or lualatex:
+    \setmainfont{lato}
+\else
+% %   If using pdflatex:
+    \usepackage[default]{lato}
+% \fi
+
+% Change the colours if you want to 008CFF
+\definecolor{VividBlue}{HTML}{FF9900} %Blue in the doc
+\definecolor{SlateGrey}{HTML}{2E2E2E}  %Black
+% \definecolor{LightGrey}{HTML}{2E2E2E}
+\definecolor{LightGrey}{HTML}{666666} % gray (NOT USED)
+% \colorlet{name}{black}
+\colorlet{tagline}{VividBlue}
+\colorlet{heading}{SlateGrey}
+\colorlet{headingrule}{SlateGrey}
+
+\colorlet{accent}{VividBlue}
+\colorlet{emphasis}{SlateGrey}
+\colorlet{body}{LightGrey}
+
+% Change some fonts, if necessary
+% \renewcommand{\namefont}{\Huge\rmfamily\bfseries}
+% \renewcommand{\personalinfofont}{\footnotesize}
+% \renewcommand{\cvsectionfont}{\LARGE\rmfamily\bfseries}
+% \renewcommand{\cvsubsectionfont}{\large\bfseries}
+
+% Change the bullets for itemize and rating marker
+% for \cvskill if you want to
+\renewcommand{\itemmarker}{{\small\textbullet}}
+\renewcommand{\ratingmarker}{\faCircle}
+
+%% Use (and optionally edit if necessary) this .tex if you
+%% want to use an author-year reference style like APA(6)
+%% for your publication list
+\input{pubs-authoryear}
+
+%% Use (and optionally edit if necessary) this .tex if you
+%% want an originally numerical reference style like IEEE
+%% for your publication list
+% \input{pubs-num}
+
+%% sample.bib contains your publications
+\addbibresource{sample.bib}
+
+\begin{document}
+\name{Prakhar Porwal}
+\tagline{Software Developer}
+% Cropped to square from https://en.wikipedia.org/wiki/Marissa_Mayer#/media/File:Marissa_Mayer_May_2014_(cropped).jpg, CC-BY 2.0
+%% You can add multiple photos on the left or right
+% \photoR{3.5cm}{prakhar-photo}
+% \photoL{2cm}{Yacht_High,Suitcase_High}
+\personalinfo{%
+  % Not all of these are required!
+  % You can add your own with \printinfo{symbol}{detail}
+  \email{prakharporwal99@gmail.com}
+  \phone{+919565600834}
+%   \mailaddress{Address, Street, 00000 County}
+%   \location{Rajasthan, India }
+%   \homepage{marissamayr.tumblr.com}
+%   \twitter{@marissamayer}
+%   \linkedin{porwalprakhar}
+    \github{prakharporwal}
+    % I'm just making this up though.
+%   \orcid{0000-0000-0000-0000} % Obviously making this up too.
+  %% You can add your own arbitrary detail with
+  %% \printinfo{symbol}{detail}[optional hyperlink prefix]
+  % \printinfo{\faPaw}{Hey ho!}
+  %% Or you can declare your own field with
+  %% \NewInfoFiled{fieldname}{symbol}[optional hyperlink prefix] and use it:
+  % \NewInfoField{gitlab}{\faGitlab}[https://gitlab.com/]
+  % \gitlab{your_id}
+	%%
+  %% For services and platforms like Mastodon where there isn't a
+  %% straightforward relation between the user ID/nickname and the hyperlink,
+  %% you can use \printinfo directly e.g.
+  % \printinfo{\faMastodon}{@username@instace}[https://instance.url/@username]
+  %% But if you absolutely want to create new dedicated info fields for
+  %% such platforms, then use \NewInfoField* with a star:
+  % \NewInfoField*{mastodon}{\faMastodon}
+  %% then you can use \mastodon, with TWO arguments where the 2nd argument is
+  %% the full hyperlink.
+  % \mastodon{@username@instance}{https://instance.url/@username}
+}
+
+\makecvheader
+
+%% Depending on your tastes, you may want to make fonts of itemize environments slightly smaller
+\AtBeginEnvironment{itemize}{\small}
+
+%% Set the left/right column width ratio to 6:4.
+\columnratio{0.6}
+
+% Start a 2-column paracol. Both the left and right columns will automatically
+% break across pages if things get too long.
+\begin{paracol}{2}
+
+\cvsection{Experience}
+\cvevent{Software Developer}{SAP SuccessFactors}{July 2021 -- Ongoing}{Bangalore, India}
+
+\cvevent{Software Development Intern}{SAP Labs India}{Feb 2021 -- July 2021}{Gurgaon, India}
+
+% \divider
+
+\cvsection{Projects}
+
+\cvevent{Focalboard}{ Open Source Project @ Mattermost }{}{}
+\begin{itemize}
+\item Prevented user from accidentally manipulating/deleting their data by raising Warning dialog for each modification. 
+\item  \underline{\href{https://github.com/mattermost/focalboard/pull/547}{Solved Bug relating to data propagation to Child Component} }
+\item \color{emphasis}\textbf{TECH USED : TypeScript, ReactJS , Golang}
+\end{itemize}
+
+\divider
+
+\cvevent{Change Data Capture on DynamoDB}{Performed Analytics on Redshift}{}{}
+\begin{itemize}
+    \item performed analytics on data warehouse using AWS Redshift.
+    \item Change Data Capture on DyanmoDB and dumped into S3. 
+    \item Analytics on S3 json Files using Redshift.
+    \item Used React JS to display the data using API.
+    \item \color{emphasis}\textbf{TECH USED : S3, Redshift, DynamoDB, CDC, API Gateway, ReactJS }
+\end{itemize}
+
+\divider
+
+\cvevent{Retrofeed}{Tool to improve retrospectives meetings}{}{}
+\begin{itemize}
+\item Improved retrospectives meetings for about 15 Teams (250+ users).
+\item built product features keeping user experience at core.
+\item Migrated to Component based UI using React JS.
+\item \color{emphasis}\textbf{TECH USED : Spring Boot, Spring Security, React JS, PostgreSQL}
+\end{itemize}
+
+
+% \divider
+% \cvevent{Improved Full Text Search}{}{}{}
+% \begin{itemize}
+%     \item performed analytics on data warehouse using AWS Redshift.
+%     \item Change Data Capture on DyanmoDB and dumped into S3. 
+%     \item Analytics on S3 json Files using Redshift.
+%     \item Used React JS to display the data using API
+%     \item \textbf{TECH USED :} Elastic Search, DynamoDB, CDC, API Gateway, ReactJS
+% \end{itemize}
+
+
+
+
+\cvsection{Education}
+
+\cvschool{B.Tech\ in Information Technology}{Indian Institute of Information Technology}{Aug 2017 -- Sept 2021 }{Allahabad}{7.63/10}
+
+\divider
+
+\cvschool{Senior Secondary}{Modern School}{Mar 2013 -- Mar 2017}{Kota}{85.8\%}
+
+
+% \cvevent{Product Engineer}{Google}{23 June 1999 -- 2001}{Palo Alto, CA}
+
+% \begin{itemize}
+% \item Joined the company as employe \#20 and female employee \#1
+% \item Developed targeted advertisement in order to use user's search queries and show them related ads
+% \end{itemize}
+
+% \cvsection{Languages}
+
+% \cvskill{C++}{5}0
+% Proficient
+% \divider
+
+% \cvskill{Java}{3}
+% Intermediate
+% \divider
+
+% \cvskill{Golang}{1} %% supports X.5 values.
+% Beginner
+% \divider
+% \cvskill{ReactJS}{2}
+% Intermediate
+
+% \divider
+
+% \cvsection{A Day of My Life}
+
+% Adapted from @Jake's answer from http://tex.stackexchange.com/a/82729/226
+% \wheelchart{outer radius}{inner radius}{
+% comma-separated list of value/text width/color/detail}
+% Some ad-hoc tweaking to adjust the labels so that they don't overlap
+% \hspace*{-1em}  %% quick hack to move the wheelchart a bit left
+% \wheelchart{1.5cm}{0.5cm}{%
+%   10/13em/accent!30/Sleeping \& dreaming about work,
+%   25/9em/accent!60/Public resolving issues with Yahoo!\ investors,
+%   5/11em/accent!10/\footnotesize\\[1ex]New York \& San Francisco Ballet Jawbone board member,
+%   20/11em/accent!40/Spending time with family,
+%   5/8em/accent!20/\footnotesize Business development for Yahoo!\ after the Verizon acquisition,
+%   30/9em/accent/Showing Yahoo!\ \mbox{employees} that their work has meaning,
+%   5/8em/accent!20/Baking cupcakes
+% }
+
+% use ONLY \newpage if you want to force a page break for
+% ONLY the currentc column
+% \newpage
+
+% \cvsection{Publications}
+
+% \nocite{*}
+
+% \printbibliography[heading=pubtype,title={\printinfo{\faBook}{Books}},type=book]
+
+% \divider
+
+% \printbibliography[heading=pubtype,title={\printinfo{\faFile*[regular]}{Journal Articles}}, type=article]
+
+% \divider
+
+% \printbibliography[heading=pubtype,title={\printinfo{\faUsers}{Conference Proceedings}},type=inproceedings]
+
+%% Switch to the right column. This will now automatically move to the second
+%% page if the content is too long.
+\switchcolumn
+
+\cvsection{Technologies used}
+\begin{center}
+% \cvtag{Low Level Design}
+\cvtag{MVC Architecture}
+\cvtag{\faReact React JS}
+\cvtag{\faAws AWS}
+\cvtag{\faLeaf Spring Boot}
+\cvtag{Spring Security}
+\cvtag{Spring Hibernate}
+\cvtag{Data Structure}
+\cvtag{Algorithms}
+\end{center}
+
+\cvsection{Skills}
+% \cvskill{Low Level Design}{3}
+% \divider
+% \cvskill{OOP}{4}
+\begin{itemize}
+    \item Building Web Application with MVC Architecture.
+    \item Designing low level architecture of web applications.
+    \item Writing Algorithms with use of data structures.
+\end{itemize}
+
+
+
+\cvsection{Interests}
+\cvinterests{FullStack Development}{}
+\divider
+\cvinterests{Designing and Rethinking Solutions}{}
+
+
+\cvsection{Achievements}
+
+\cvachievement{\faCircle}{Secured AIR 3947 in JEE Mains}{}
+\cvachievement{\faTrophy}{NTSE}{Qualified NTSE (State level) Exam}
+
+\cvachievement{\faTableTennis}{State Level T.T player}{Achieved 2nd Position in State Level Tournament}
+\cvachievement{\faSwimmer}{Swimmer}{Achieved 3 silver medal in Inter-IIIT Sports meet}
+
+% \divider\smallskip
+
+% \cvtag{UX}
+% \cvtag{Mobile Devices \& Applications}
+% \cvtag{Product Management \& Marketing}
+
+
+
+% \cvsection{Languages}
+
+% \cvskill{C++ \cvtag{Most Used}}{4} 
+% \divider
+
+% \cvskill{Java \cvtag{Spring}}{3}
+% \divider
+
+% \cvskill{JavaScript \cvtag{Learning}}{2}
+% \divider
+
+% \cvskill{Golang \cvtag{Learning}}{2} %% supports X.5 values.
+% \divider
+
+% \cvsection{Life Philosophy}
+% \begin{quote}
+% ``If you don't change, nothing will change.''
+% \end{quote}
+
+% \cvsection{Hobbies}
+% \begin{center}
+% \cvtag{\faSwimmer Swimming} 
+% \cvtag{\faTableTennis Table Tennis}
+% \cvtag{\faPaintBrush Painting}
+% \cvtag{\faGuitar Guitar playing}
+% \cvtag{\faCameraRetro Photography}
+% \end{center}
+% \newpage
+
+% \cvsection{Referees}
+
+% % \cvref{name}{email}{mailing address}
+% \cvref{Prof.\ Alpha Beta}{Institute}{a.beta@university.edu}
+% {Address Line 1\\Address line 2}
+
+% \divider
+
+% \cvref{Prof.\ Gamma Delta}{Institute}{g.delta@university.edu}
+% {Address Line 1\\Address line 2}
+
+
+\end{paracol}
+
+\end{document}
